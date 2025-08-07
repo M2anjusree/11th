@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cosmetics Menu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212; /* dark background */
+      color: #e0e0e0; /* light text for readability */
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00bfff; /* bright blue heading */
+      margin-bottom: 30px;
+    }
+
+    .category {
+      background: #1e1e1e; /* dark card background */
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #005577; /* deep blue */
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      transition: background 0.3s ease;
+    }
+
+    .category-header:hover {
+      background-color: #0077aa; /* lighter blue on hover */
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+
+    .items {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      background-color: #1a1a1a;
+    }
+
+    .items.open {
+      max-height: 500px;
+      padding: 10px 20px 20px;
+    }
+
+    .items ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .items li {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #add8e6; /* light blue items */
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Cosmetics Menu</h1>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Face</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Primer</li>
+        <li>Foundation</li>
+        <li>Concealer</li>
+        <li>Compact / Setting Powder</li>
+        <li>Blush</li>
+        <li>Highlighter</li>
+        <li>Bronzer</li>
+        <li>Setting Spray</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Eyes</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Eyebrow Pencil / Gel</li>
+        <li>Eyeshadow Palette</li>
+        <li>Eyeliner</li>
+        <li>Mascara</li>
+        <li>Kajal</li>
+        <li>False Eyelashes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Lips</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Lip Balm</li>
+        <li>Lip Liner</li>
+        <li>Lipstick</li>
+        <li>Lip Gloss</li>
+        <li>Liquid Lipstick</li>
+        <li>Lip Tint</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Nails</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Nail Polish</li>
+        <li>Nail Remover</li>
+        <li>Nail Art</li>
+        <li>Cuticle Oil</li>
+        <li>Top/Base Coat</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Skin Prep</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Cleanser</li>
+        <li>Toner</li>
+        <li>Moisturizer</li>
+        <li>Serum</li>
+        <li>Sunscreen</li>
+        <li>Face Mask</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="category">
+    <div class="category-header" onclick="toggleMenu(this)">
+      <span>Tools & Accessories</span><span class="icon">➕</span>
+    </div>
+    <div class="items">
+      <ul>
+        <li>Makeup Brushes</li>
+        <li>Beauty Blender</li>
+        <li>Eyelash Curler</li>
+        <li>Makeup Remover</li>
+        <li>Tweezers</li>
+        <li>Mirror</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(header) {
+      const items = header.nextElementSibling;
+      const icon = header.querySelector('.icon');
+      const isOpen = items.classList.contains('open');
+
+      if (isOpen) {
+        items.classList.remove('open');
+        icon.textContent = '➕';
+      } else {
+        items.classList.add('open');
+        icon.textContent = '➖';
+      }
+    }
+  </script>
+
+</body>
+</html>
